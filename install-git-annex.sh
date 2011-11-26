@@ -57,6 +57,10 @@ add_keywords_line ">=dev-haskell/missingh-1.1.1.0 ~amd64"
 add_keywords_line "#required by dev-vcs/git-annex-9999, required by git-annex (argument)"
 add_keywords_line ">=dev-haskell/pcre-light-0.4 ~amd64"
 
+add_keywords_line "#required by dev-haskell/random:0 (argument)"
+add_keywords_line ">=dev-haskell/random-1.0.0.3 ~amd64"
+
 emerge -v =dev-haskell/syb-0.3.3 && \
 emerge -v =dev-haskell/monad-control-0.2.0.3 && \
+haskell-updater --all && \
 emerge -v =dev-vcs/git-annex-9999
