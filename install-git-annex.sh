@@ -22,6 +22,10 @@ add_keywords_line ">=dev-haskell/dataenc-0.14.0.2 ~amd64"
 add_keywords_line "#required by =dev-lang/ghc-7.0.4 (argument)"
 add_keywords_line "=dev-lang/ghc-7.0.4 ~amd64"
 
+
+add_keywords_line "#required by =dev-haskell/json-0.5 (argument)"
+add_keywords_line ">=dev-haskell/json-0.5 ~amd64"
+
 add_keywords_line "#required by git-annex (argument)"
 add_keywords_line ">=dev-vcs/git-annex-9999 ~amd64"
 add_keywords_line "#required by dev-vcs/git-annex-9999, required by git-annex (argument)"
