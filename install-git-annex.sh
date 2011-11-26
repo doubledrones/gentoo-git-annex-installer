@@ -5,8 +5,6 @@ function add_keywords_line() {
     "")
       echo "$@" >> /etc/portage/package.keywords
       ;;
-    *)
-      ;;
   esac
 }
 
