@@ -66,6 +66,23 @@ add_keywords_line ">=dev-haskell/pcre-light-0.4 ~amd64"
 add_keywords_line "#required by =git-annex-3.20111122 (argument)"
 add_keywords_line "=dev-vcs/git-annex-3.20111122 ~amd64"
 
-emerge -v =dev-lang/ghc-7.0.4 && \
-USE=ghcbootstrap emerge -v =dev-lang/ghc-7.2.2 && \
-emerge -v =dev-vcs/git-annex-3.20111122
+emerge -v =dev-lang/ghc-7.0.4 || exit 1
+USE=ghcbootstrap emerge -v =dev-lang/ghc-7.2.2 || exit 2
+
+add_keywords_line "#required by dev-haskell/monad-control-0.2.0.3, required by dev-haskell/monad-control:0 (argument)"
+add_keywords_line ">=dev-haskell/transformers-0.2.2.0 ~amd64"
+add_keywords_line "#required by dev-haskell/random:0 (argument)"
+add_keywords_line ">=dev-haskell/random-1.0.0.3 ~amd64"
+add_keywords_line "#required by dev-haskell/monad-control:0 (argument)"
+add_keywords_line ">=dev-haskell/monad-control-0.2.0.3 ~amd64"
+add_keywords_line "#required by dev-haskell/monad-control-0.2.0.3, required by dev-haskell/monad-control:0 (argument)"
+add_keywords_line ">=dev-haskell/base-unicode-symbols-0.2.2.2 ~amd64"
+add_keywords_line "#required by dev-haskell/dataenc-0.13.0.2, required by dev-haskell/dataenc:0 (argument)"
+add_keywords_line "=dev-haskell/cabal-1.10.2.0 ~amd64"
+add_keywords_line "#required by @selected, required by @world (argument)"
+add_keywords_line ">=dev-haskell/syb-0.3.3 ~amd64"
+
+haskell-updater --upgrade || exit 3
+
+
+emerge -v =dev-vcs/git-annex-3.20111122 || exit 4
